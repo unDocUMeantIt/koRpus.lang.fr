@@ -1,0 +1,14 @@
+bibentry("Manual",
+    title="koRpus.lang.fr: Language Support for 'koRpus' Package: French",
+    author="Meik Michalke",
+    year="2018",
+    note="(Version 0.1-1)",
+    url="https://reaktanz.de/?c=hacking&s=koRpus",
+
+    textVersion =
+    paste("Michalke, M. (2018). ",
+        "koRpus.lang.fr: Language Support for 'koRpus' Package: French (Version 0.1-1). ",
+        "Available from https://reaktanz.de/?c=hacking&s=koRpus",
+        sep=""),
+
+    mheader = "To cite koRpus.lang.fr in publications use:")
