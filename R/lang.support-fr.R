@@ -1,4 +1,4 @@
-# Copyright 2010-2019 Meik Michalke <meik.michalke@hhu.de>
+# Copyright 2010-2020 Meik Michalke <meik.michalke@hhu.de>
 #
 # This file is part of the R package koRpus.lang.fr.
 #
@@ -53,15 +53,17 @@ lang.support.fr <- function(...) {
       lang="fr",
       encoding="UTF-8",
       preset=function(TT.cmd, TT.bin, TT.lib, unix.OS){
-        TT.abbrev      <- file.path(TT.lib, "french-abbreviations-utf8")
+        TT.tokenizer   <- file.path(TT.cmd, "utf8-tokenize.perl")
+        TT.abbrev      <- file.path(TT.lib, "french-abbreviations")
+        TT.params      <- file.path(TT.lib, "french.par")
         if(isTRUE(unix.OS)){
           # preset for unix systems
           return(
             list(
-              TT.tokenizer      = file.path(TT.cmd, "utf8-tokenize.perl"),
+              TT.tokenizer      = TT.tokenizer,
               TT.tagger         = file.path(TT.bin, "tree-tagger"),
               TT.abbrev         = TT.abbrev,
-              TT.params         = file.path(TT.lib, "french-utf8.par"),
+              TT.params         = TT.params,
               TT.lexicon        = c(),
               TT.lookup         = c(),
               TT.filter         = c(),
@@ -75,10 +77,10 @@ lang.support.fr <- function(...) {
           # preset for windows systems
           return(
             list(
-              TT.tokenizer      = file.path(TT.cmd, "utf8-tokenize.perl"),
+              TT.tokenizer      = TT.tokenizer,
               TT.tagger         = file.path(TT.bin, "tree-tagger.exe"),
               TT.abbrev         = TT.abbrev,
-              TT.params         = file.path(TT.lib, "french-utf8.par"),
+              TT.params         = TT.params,
               TT.lexicon        = c(),
               TT.lookup         = c(),
               TT.filter         = c(),
